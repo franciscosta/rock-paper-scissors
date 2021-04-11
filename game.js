@@ -76,25 +76,30 @@ let game = () => {
         console.log("------------------------------------------");
         console.log("Enter [0] for rock, [1] for paper, [2] for scissors, [3] to stop playing.");
 
+        // The two hands
         let user = userHand();
         let computer = computerHand();
 
+        // Abort game
         if (user === 3) {
             gameIsOn = !gameIsOn;
             console.log("Ok, bye!");
             continue;
         }
 
-        let outcome = result(user, computer);
-
+        // Display gands
         console.log(`You chose ${GAMEOPTIONS[user]}.`);
         console.log(`The computer chose ${GAMEOPTIONS[computer]}.`);
 
+        // Play the game
+        let outcome = result(user, computer);
+
+        // Display result
         if (outcome === "user") {
-            console.log("You won!");
+            console.log("You won.");
             userWins++;
         } else if (outcome === "computer") {
-            console.log("The computer beat you.");
+            console.log("You lost.");
             computerWins++;
         } else if (outcome === "tie") {
             console.log("It's a tie.");
