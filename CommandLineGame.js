@@ -1,21 +1,17 @@
-// Rock Paper Scissors
 
 const GAMEOPTIONS = ["Rock", "Paper", "Scissors"];
 
-// 1.
 
 let computerHand = () => {
     /**
-     * Generates random int
+     * Returns a random int
      * Between 0 and options available
      * Returns that int as the computer's hand
      */
 
-    let hand = Math.floor(Math.random() * GAMEOPTIONS.length);
-    return hand;
+    return Math.floor(Math.random() * GAMEOPTIONS.length);
 }
 
-// 2.
 
 let userHand = () => {
     /**
