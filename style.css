@@ -55,6 +55,28 @@ body {
     margin-top: 20px;
 }
 
+.announcement {
+    display: none;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: #ccf119;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.announcement .win {
+    font-size: 8.5em;
+    letter-spacing: -0.08em;
+    line-height: 0.9em;
+    text-align: center;
+}
+
+.visible {
+    display: flex;
+}
+
 @media (orientation: portrait) {  
 
     body {

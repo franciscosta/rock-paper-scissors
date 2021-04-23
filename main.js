@@ -44,6 +44,11 @@ function updateFrontEnd(human, computer, winner) {
     let computerVote = document.querySelector(`.${GAMEOPTIONS[computer].toLocaleLowerCase()}.computer`);
     computerVote.classList.add('selected');
 
+    if (humanPoints === 5 || computerPoints === 5) {
+        winnerUpdate(winner);
+        return;
+    }
+
     if (winner !== "tie") {
         var winnerTag = document.querySelector(`.player.${winner}`);
         winnerTag.innerText = "Winner!";
@@ -71,8 +76,28 @@ function updateFrontEnd(human, computer, winner) {
 
     }, 500);
 
+
 }
 
+function winnerUpdate(winner) {
+
+    var announcement = document.querySelector('.announcement');
+    announcement.classList.add('visible');
+
+    let win = document.querySelector('.win');
+    if (winner === "human") {
+        win.innerText = "You win!"
+    } else {
+        win.innerText = "You lose!"
+    }
+
+
+    setTimeout(function() {
+        announcement.classList.remove('visible');
+        location.reload();
+    }, 1500);
+
+}
 
 function game(e) {
 
