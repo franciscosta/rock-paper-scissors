@@ -26,8 +26,8 @@ body {
 }
 
 .player, .points {
-    font-size: 1.5em;
-    margin: 20px 0 30px;
+    font-size: 1.8em;
+    margin: 20px 0 40px;
 }
 
 .option {
@@ -49,3 +49,25 @@ body {
 .selected {
     color: #ccf119;
 }
+
+.score {
+    font-size: 1.5em;
+    margin-top: 20px;
+}
+
+@media (min-width: 576px) {  
+
+    body {
+        flex-direction: column;
+    }
+
+    .container {
+        height: 50vh;
+    
+    }
+    .container:first-of-type {
+        border-bottom: 1px solid rgba(0,0,0,.1);
+    }
+
+}
+   

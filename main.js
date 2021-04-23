@@ -44,6 +44,15 @@ function updateFrontEnd(human, computer, winner) {
     let computerVote = document.querySelector(`.${GAMEOPTIONS[computer].toLocaleLowerCase()}.computer`);
     computerVote.classList.add('selected');
 
+    if (winner !== "tie") {
+        var winnerTag = document.querySelector(`.player.${winner}`);
+        winnerTag.innerText = "Winner!";
+        document.querySelector(`#${winner}`).classList.add('winner');
+    } else {
+        document.querySelector('.player.human').innerText = "Tie!";
+        document.querySelector('.player.computer').innerText = "Tie!";
+    }
+
     // Update Points
     updatePoints();
 
@@ -51,7 +60,16 @@ function updateFrontEnd(human, computer, winner) {
     setTimeout(function() {
         humanVote.classList.remove('selected');
         computerVote.classList.remove('selected');
-    }, 1000);
+
+        if (winner !== "tie") {
+            winnerTag.innerText = winner.charAt(0).toUpperCase() + winner.slice(1);
+            document.querySelector(`#${winner}`).classList.remove('winner');
+        } else {
+            document.querySelector('.player.human').innerText = "Human";
+            document.querySelector('.player.computer').innerText = "Computer";
+        }
+
+    }, 500);
 
 }
 
