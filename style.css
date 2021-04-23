@@ -55,7 +55,7 @@ body {
     margin-top: 20px;
 }
 
-@media (min-width: 576px) {  
+@media (max-width: 576px) {  
 
     body {
         flex-direction: column;
