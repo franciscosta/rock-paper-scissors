@@ -55,14 +55,14 @@ body {
     margin-top: 20px;
 }
 
-@media (max-width: 576px) {  
+@media (orientation: portrait) {  
 
     body {
         flex-direction: column;
     }
 
     .container {
-        height: 50vh;
+        height: 45vh;
     
     }
     .container:first-of-type {

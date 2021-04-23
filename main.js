@@ -94,3 +94,13 @@ window.addEventListener('click', function(e){
     }
 
 });
+
+window.addEventListener('touchstart', function(e){
+
+    const click = e.srcElement.innerText;
+
+    if (GAMEOPTIONS.includes(click)) {
+        game(click);
+    }
+
+});
